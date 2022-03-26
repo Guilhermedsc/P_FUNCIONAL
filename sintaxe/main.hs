@@ -60,6 +60,13 @@ minimum [1, 2, 3] -> 1 -> retorna o menor elemento da lista
 
 {- 
 [x*2 | x <- [1..5]] -> [2, 4, 6, 8, 10] -> multiplica cada elemento por 2
-
 [x*2 | x <- [1..9], x > 5] -> [12, 14, 16, 18, 20] -> multiplica cada elemento por 2 e soma os elementos que são maiores que 5
+
+filter (\x -> x > 5) [1..9] -> [6, 7, 8, 9] -> filtra os elementos que são maiores que 5
+       (\x) parametro -> (x > 5) condição 
+map (\x -> x*2) [1..9] -> [2, 4, 6, 8, 10, 12, 14, 16, 18, 20] -> multiplica cada elemento por 2
+map (\x -> x*2) (filter (\x -> x > 5) [1..9]) -> filtra os elementos da lista e então multiplica cada elemento por 2
 -}
+
+add :: Num a => a -> a -> a
+add x y = x + y     --nome da função, parametro(s) = ação

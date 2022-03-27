@@ -1,3 +1,4 @@
+import System.Win32 (COORD(x))
 a :: Double
 a = 3 + 1 * 2 / 4
 
@@ -70,3 +71,27 @@ map (\x -> x*2) (filter (\x -> x > 5) [1..9]) -> filtra os elementos da lista e 
 
 add :: Num a => a -> a -> a
 add x y = x + y     --nome da função, parametro(s) = ação
+
+(@@) :: Num a => a -> a -> a
+(@@) a b = 2*(a+b)
+
+fib x
+      | x < 2 = 1
+      | otherwise = fib(x-1) + fib(x-2)
+
+ndig x
+       | x < 10 = 1
+       | otherwise = 1 + ndig(x `div` 10)
+
+tm [] = 0
+tm (x:xs) = 1+tm xs
+
+ult (x:[]) = x
+ult (x:xs) = ult xs
+
+pnult (x:[y]) = x
+pnult (x:xs) = pnult xs
+
+soma = (+)
+
+acoes = head. (\x -> x:[]). (4+). (2*)

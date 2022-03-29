@@ -1,0 +1,21 @@
+    Paradigma IMPERATIVO:
+Pode ser usado para criar novas linguagens de programação, para criar aplicações que fazem o uso do conceito de
+"variável editavel", para sistemas operacionas que precisam aproveitar da melhor forma possível o uso de recursos
+de processamento.
+
+    Paradigma ESTRUTURADO:
+Assim como o paradigma imperativo, o paradigma estruturado também pode ser usado para criar novas linguagens 
+de programação, com o objetivo de organizar o código em blocos lógicos afim de facilitar a leitura do código.
+
+    Paradigma ORIENTADO A OBJETOS:
+Como cada classe tem seus próprios atributos e métodos, ela ajuda a evitar a repetição de código, a evitar a criação
+de variáveis globais permetindo de certa forma uma padronização de código.
+
+    Paradigma DECLANATIVO:
+Pode ser e é muito usada na malipulação de dados ajudando o programador, pois nela não é necessário dizer "como" fazer 
+mais sim a penas "o que". Um exemplo é o SQL, que é uma linguagem de programação que é declarativa.
+
+    Paradigma FUNCIONAL:
+Pode ser usado para coisas mais simples (não só isso), para códigos curtos e objetivos onde a "mutalidade" não seja 
+importante. Pelo fato desse Paradigma funcionar como um "cano" ele torna a manuteção muito mais simples que os outros
+, ou seja, pode ser usado para evitar muito bugs. 

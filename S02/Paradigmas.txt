@@ -17,4 +17,5 @@ mais sim a penas "o que". Um exemplo é o SQL, que é uma linguagem de programa�
 
     Paradigma FUNCIONAL:
 Pode ser usado para coisas mais simples (não só isso), para códigos curtos e objetivos onde a "mutalidade" não seja 
-importante. Pelo fato desse Paradigma funcionar como um "cano" ele torna a manuteção muito mais simples que os outros, ou seja, pode ser usado para evitar muito bugs. 
+importante. Pelo fato desse Paradigma funcionar como um "cano" ele torna a manuteção muito mais simples que os outros, 
+ou seja, pode ser usado para evitar muito bugs. 

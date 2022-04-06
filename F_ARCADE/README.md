@@ -32,16 +32,36 @@ interior xs =  take ((length xs) - 2) (drop 1 xs)
 
 - @008 gangorra
 ```haskell
-
+gangorra :: (Num a, Num p, Ord a) => a -> a -> a -> a -> p
+gangorra p1 c1 p2 c2
+    | p1 * c1 == p2 * c2 = 0
+    | p1 * c1 < p2 * c2 = 1
+    | otherwise = -1
 ```
 
 - @010 min2
+```haskell
+min2 :: Ord a => a -> a -> a
+min2 x y = min x y
+```
+
 - @011 min3
+```haskell
+min3 :: Ord a => a -> a -> a -> a
+min3 x y z = min z (min x y)
+```
+
 - @000 soma2
+```haskell
+soma2 :: Num a => a -> a -> a
+soma2 x y = x + y
+```
 
 # 04. Operações básicas
 
 - @504 Biblioteca de Listas
+```haskell
+```
 
 - @014 @ !!
 ```haskell

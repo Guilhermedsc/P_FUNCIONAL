@@ -2,29 +2,18 @@
 
 ## Tópicos
 
-[03. Aquecimento](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#03-aquecimento)
-
-[04. Operações básicas](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#04-opera%C3%A7%C3%B5es-b%C3%A1sicas)
-
-[05. Recursão]()
-
-[06. Data.List && Prelude]()
-
-[07. Maybe]()
-
-[07. Zip e Fold]()
-
-[10. Strings]()
-
-[11. Math]()
-
-[12. Infinite lists]()
-
-[13. Ordenação]()
-
-[14. Algoritmos CHATOS!]()
-
-[14. Novas]()
+- [03. Aquecimento](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#03-aquecimento)
+- [04. Operações básicas](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#04-opera%C3%A7%C3%B5es-b%C3%A1sicas)
+- [05. Recursão]()
+- [06. Data.List && Prelude]()
+- [07. Maybe]()
+- [07. Zip e Fold]()
+- [10. Strings]()
+- [11. Math]()
+- [12. Infinite lists]()
+- [13. Ordenação]()
+- [14. Algoritmos CHATOS!]()
+- [15. Novas]()
 
 ## 03. Aquecimento
 

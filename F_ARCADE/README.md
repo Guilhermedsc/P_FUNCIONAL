@@ -59,10 +59,6 @@ soma2 x y = x + y
 
 # 04. Operações básicas
 
-- @504 Biblioteca de Listas
-```haskell
-```
-
 - @014 @ !!
 ```haskell
 at :: [a] -> Int -> a
@@ -76,3 +72,41 @@ main = do
     print $ at [2,7,3,9] (-1)   --9
     print $ at [2,7,3,9] (-2)   --3
 ```
+
+- @015 @ elem
+```haskell
+pertence :: (Foldable t, Eq a) => a -> t a -> Bool
+pertence x xs = elem x xs
+```
+
+- @016 @ length
+```haskell
+total [] = 0
+total (x:xs) = 1 + total xs
+```
+
+- @017 @ maximum
+```haskell
+maior :: [Int] -> Int
+maior [] = 0
+maior [x] = x
+maior (x:xs) = if x > (maior xs) then x else (maior xs)
+```
+
+- @023 @ init
+```haskell
+primeiros :: [a] -> [a]
+primeiros xs = reverse $ tail $ reverse xs
+```
+
+- @028 @ splitAt
+@047 @ partition
+@007 somaImpares
+@001 max3
+@012 fatorial
+@030 uniao
+@031 intersec - intercessão entre listas
+@009 sublist
+@051 paridade
+@054 swap - trocando dois elementos de uma lista
+@063 euler1 - soma dos múltiplos de 3 e 5

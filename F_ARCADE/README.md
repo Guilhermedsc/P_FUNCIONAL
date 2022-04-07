@@ -100,13 +100,45 @@ primeiros xs = reverse $ tail $ reverse xs
 ```
 
 - @028 @ splitAt
-@047 @ partition
-@007 somaImpares
-@001 max3
-@012 fatorial
-@030 uniao
-@031 intersec - intercessão entre listas
-@009 sublist
-@051 paridade
-@054 swap - trocando dois elementos de uma lista
-@063 euler1 - soma dos múltiplos de 3 e 5
+```haskell
+```
+
+- @047 @ partition
+```haskell
+```
+
+- @007 somaImpares
+```haskell
+```
+
+- @001 max3
+```haskell
+```
+
+- @012 fatorial
+```haskell
+```
+
+- @030 uniao
+```haskell
+```
+
+- @031 intersec - intercessão entre listas
+```haskell
+```
+
+- @009 sublist
+```haskell
+```
+
+- @051 paridade
+```haskell
+```
+
+- @054 swap - trocando dois elementos de uma lista
+```haskell
+```
+
+- @063 euler1 - soma dos múltiplos de 3 e 5
+```haskell
+```

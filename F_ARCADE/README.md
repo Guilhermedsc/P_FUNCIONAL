@@ -116,6 +116,8 @@ primeiros xs = reverse $ tail $ reverse xs
 
 - @028 @ splitAt
 ```haskell
+divide :: [a] -> Int -> ([a], [a])
+divide xs x = splitAt x xs
 ```
 
 - @047 @ partition
@@ -124,14 +126,20 @@ primeiros xs = reverse $ tail $ reverse xs
 
 - @007 somaImpares
 ```haskell
+somaImpares :: Integral a => [a] -> a
+somaImpares xs = sum $ filter (\x -> (x `mod` 2 /= 0)) xs
 ```
 
 - @001 max3
 ```haskell
+max3 :: Ord a => a -> a -> a -> a
+max3 x y z = max (max x y) z
 ```
 
 - @012 fatorial
 ```haskell
+fatorial 0 = 1
+fatorial n = n * fatorial (n - 1)
 ```
 
 - @030 uniao

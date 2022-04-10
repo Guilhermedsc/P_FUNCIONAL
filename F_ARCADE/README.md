@@ -144,14 +144,41 @@ fatorial n = n * fatorial (n - 1)
 
 - @030 uniao
 ```haskell
+uniao :: Ord a => [a] -> [a] -> [a]
+uniao [] [] =[]
+uniao [] (x:xs) =(x:xs)
+uniao (x:xs) [] =(x:xs)
+uniao (x:xs)(y:ys)
+    | x<y = x:uniao xs (y:ys)
+    | x==y = x: uniao xs ys
+    | otherwise = y: uniao (x:xs) ys
+
+uniao' :: [a] -> [a] -> [a]
+uniao' [] y = y
+uniao' (x:xs) a@(y:ys) = if (pertence x a) then uniao' xs a else x:uniao' xs a
+pertence :: a -> [a] -> Bool
+pertence = error "not implemented"
 ```
 
 - @031 intersec - intercessão entre listas
 ```haskell
+intersec :: Eq a => [a] -> [a] -> [a]
+intersec  [] y  = []
+intersec  y  [] = []
+intersec (x:xs) l2
+    | elem x l2 = x:intersec  xs l2
+    | otherwise = intersec  xs l2
 ```
 
 - @009 sublist
 ```haskell
+sublist x y xs
+    | y < 0 = sublist (mod (length xs + x) (length xs)) (length new + 1) new
+    | x < 0 = drop (length xs + x) (take y xs)
+    | otherwise = drop x $ take y xs
+    where new = take (length xs + y) xs
+
+{- tentar ajeitar o error depois -}
 ```
 
 - @051 paridade

@@ -138,8 +138,7 @@ max3 x y z = max (max x y) z
 
 - @012 fatorial
 ```haskell
-fatorial 0 = 1
-fatorial n = n * fatorial (n - 1)
+fatorial n = product [2..n]
 ```
 
 - @030 uniao

@@ -182,6 +182,12 @@ sublist x y xs
 
 - @051 paridade
 ```haskell
+cont :: Num p => [Bool] -> p
+cont [] = 0
+cont (x:xs) =  if x then 1 + cont xs else cont xs
+
+paridade :: [Bool] -> Bool
+paridade xs = if (cont xs) `mod` 2 /= 0 then True else False
 ```
 
 - @054 swap - trocando dois elementos de uma lista
@@ -190,4 +196,6 @@ sublist x y xs
 
 - @063 euler1 - soma dos múltiplos de 3 e 5
 ```haskell
+euler1 :: Integral a => a -> a
+euler1 n = sum [x | x <- [1..n-1], (x `mod` 3 == 0 || x `mod` 5 == 0)]
 ```

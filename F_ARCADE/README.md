@@ -199,3 +199,25 @@ paridade xs = if (cont xs) `mod` 2 /= 0 then True else False
 euler1 :: Integral a => a -> a
 euler1 n = sum [x | x <- [1..n-1], (x `mod` 3 == 0 || x `mod` 5 == 0)]
 ```
+
+# 05. Recursão
+
+- @506 Biblioteca Transformações e Busca com predicados
+- @013 fibonacci
+- @018 frequencia
+- @019 unico
+- @020 maioresQue
+- @021 concatena
+- @026 alter
+- @027 reverso
+- @025 menores
+- @070 remover o maior elemento
+- @029 intercal - intercalar duas listas
+- @032 sequencia
+- @037 rotEsq
+- @038 rotDir
+- @048 quadperf
+- @053 deletee - remover primeira ocorrência
+- @059 listacc - lista acumulativa
+- @061 line - linhas de um triângulo aritmético
+- @062 triangle - triângulo aritmético

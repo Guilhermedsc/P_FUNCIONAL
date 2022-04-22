@@ -1,4 +1,4 @@
 # S03
 
 - Perfio (✔)
-- Conteúdo (✔).
+- Conteúdo (✔)

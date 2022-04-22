@@ -1,3 +1,3 @@
 # S04
 
-- Relatório (✔).
+- Relatório (✔)

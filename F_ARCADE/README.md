@@ -292,5 +292,5 @@ fib a = fib (a-1) + fib (a-2)
 
 - @062 triangle - triângulo aritmético
 ```haskell
-
+{- ... -}
 ```

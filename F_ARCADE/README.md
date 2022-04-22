@@ -202,22 +202,95 @@ euler1 n = sum [x | x <- [1..n-1], (x `mod` 3 == 0 || x `mod` 5 == 0)]
 
 # 05. Recursão
 
-- @506 Biblioteca Transformações e Busca com predicados
 - @013 fibonacci
+```haskell
+fib :: (Eq a, Num a, Num p) => a -> p
+fib 0 = 0
+fib 1 = 1
+fib a = fib (a-1) + fib (a-2)
+```
+
 - @018 frequencia
+```haskell
+
+```
+
 - @019 unico
+```haskell
+
+```
+
 - @020 maioresQue
+```haskell
+
+```
+
 - @021 concatena
+```haskell
+
+```
+
 - @026 alter
+```haskell
+
+```
+
 - @027 reverso
+```haskell
+
+```
+
 - @025 menores
+```haskell
+
+```
+
 - @070 remover o maior elemento
+```haskell
+
+```
+
 - @029 intercal - intercalar duas listas
+```haskell
+
+```
+
 - @032 sequencia
+```haskell
+
+```
+
 - @037 rotEsq
+```haskell
+
+```
+
 - @038 rotDir
+```haskell
+
+```
+
 - @048 quadperf
+```haskell
+
+```
+
 - @053 deletee - remover primeira ocorrência
+```haskell
+
+```
+
 - @059 listacc - lista acumulativa
+```haskell
+
+```
+
 - @061 line - linhas de um triângulo aritmético
+```haskell
+
+```
+
 - @062 triangle - triângulo aritmético
+```haskell
+
+```

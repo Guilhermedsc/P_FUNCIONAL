@@ -212,22 +212,27 @@ fib a = fib (a-1) + fib (a-2)
 
 - @018 frequencia
 ```haskell
-
+frequencia :: Eq a => a -> [a] -> Int
+frequencia y ys = length (filter (== y) ys)
 ```
 
 - @019 unico
 ```haskell
-
+unico :: Eq a => a -> [a] -> Bool
+unico y ys = if length (filter (== y) ys) == 1 then True else False 
 ```
 
 - @020 maioresQue
 ```haskell
-
+maioresQue :: Ord a => a -> [a] -> [a]
+maioresQue y ys = filter (> y) ys
 ```
 
 - @021 concatena
 ```haskell
-
+concatena :: [a] -> [a] -> [a]
+concatena [] ys = ys
+concatena (x:xs) ys = x: concatena xs ys
 ```
 
 - @026 alter
@@ -292,5 +297,5 @@ fib a = fib (a-1) + fib (a-2)
 
 - @062 triangle - triângulo aritmético
 ```haskell
-{- ... -}
+
 ```

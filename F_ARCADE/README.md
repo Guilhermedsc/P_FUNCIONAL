@@ -234,22 +234,30 @@ concatena :: [a] -> [a] -> [a]
 concatena [] ys = ys
 concatena (x:xs) ys = x: concatena xs ys
 
-{- [1,2,3] [4,5]
-   1:[2,3] [4,5]
-   1:2:[3] [4,5]
-   1:2:3[] [4,5]
+{- 
+[1,2,3] [4,5]
+1:[2,3] [4,5]
+1:2:[3] [4,5]
+1:2:3[] [4,5]
 
-   [1,2,3,4,5] -}
+[1,2,3,4,5] 
+-}
 ```
 
 - @026 alter
 ```haskell
-
+alter :: Int -> [Int]
+alter 0 = []
+alter 1 = [1, -1]
+alter n = alter (n-1) ++ [n, -n]
 ```
 
 - @027 reverso
 ```haskell
-
+reverso :: [a] -> [a]
+reverso [] = []
+reverso [x] = [x]
+reverso (x:xs) = reverso xs ++ [x]
 ```
 
 - @025 menores
@@ -259,7 +267,12 @@ concatena (x:xs) ys = x: concatena xs ys
 
 - @070 remover o maior elemento
 ```haskell
+maior :: (Num p, Ord p) => [p] -> p
+maior [] = 0
+maior (x:xs) = max x (maior xs)
 
+removerMaior :: (Ord a, Num a) => [a] -> [a]
+removerMaior xs = filter (< maior xs) xs
 ```
 
 - @029 intercal - intercalar duas listas

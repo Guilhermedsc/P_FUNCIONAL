@@ -277,27 +277,38 @@ removerMaior xs = filter (< maior xs) xs
 
 - @029 intercal - intercalar duas listas
 ```haskell
-
+intercal :: [a] -> [a] -> [a]
+intercal xs [] = xs
+intercal [] ys = ys
+intercal (x:xs) (y:ys) = x: y: intercal xs ys
 ```
 
 - @032 sequencia
 ```haskell
-
+sequencia 0 _ = []
+sequencia n m = m:(sequencia (n-1) (m+1))
 ```
 
 - @037 rotEsq
 ```haskell
+rotEsq :: (Eq t, Num t) => t -> [a] -> [a]
+rotEsq 0 ys = ys
+rotEsq n ys = (rotEsq (n-1) ((tail ys) ++ [head ys]))
 
+{- se quiser concatenar o resultado de head, precisa ++[head x -}
 ```
 
 - @038 rotDir
 ```haskell
-
+rotDir :: (Eq t, Num t) => t -> [a] -> [a]
+rotDir 0 ys = ys
+rotDir n ys = (rotDir (n-1) (([last ys] ++ (reverse $ tail $ reverse ys))))
 ```
 
 - @048 quadperf
 ```haskell
-
+quadperf :: (Num a, Enum a, Eq a) => a -> Bool
+quadperf n = elem 1 [1 | x <- [1..n], (x*x) == n]
 ```
 
 - @053 deletee - remover primeira ocorrência

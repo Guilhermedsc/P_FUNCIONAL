@@ -1,6 +1,2 @@
-maior :: (Num p, Ord p) => [p] -> p
-maior [] = 0
-maior (x:xs) = max x (maior xs)
-
-removerMaior :: (Ord a, Num a) => [a] -> [a]
-removerMaior xs = filter (< maior xs) xs
+quadperf :: (Num a, Enum a, Eq a) => a -> Bool
+quadperf n = elem 1 [1 | x <- [1..n], (x*x) == n]

@@ -313,20 +313,36 @@ quadperf n = elem 1 [1 | x <- [1..n], (x*x) == n]
 
 - @053 deletee - remover primeira ocorrência
 ```haskell
-
+deletee :: Eq t => t -> [t] -> [t]
+deletee n [] = []
+deletee n (x:xs) = if n == x then xs else x:(deletee n xs)
 ```
 
 - @059 listacc - lista acumulativa
 ```haskell
-
+listacc :: Num a => [a] -> [a]
+listacc [] = []
+listacc xs = listacc (init xs)++[sum xs]
 ```
 
 - @061 line - linhas de um triângulo aritmético
 ```haskell
-
+line :: (Num a, Enum a) => a -> [a]
+line n = [firstElement..lastElement]
+    where
+        firstElement = 1 + sum [1..n-1]
+        lastElement = sum [1..n]
 ```
 
 - @062 triangle - triângulo aritmético
 ```haskell
+line :: (Num a, Enum a) => a -> [a]
+line n = [firstElement..lastElement]
+    where
+        firstElement = 1 + sum [1..n-1]
+        lastElement = sum [1..n]
 
+triangle :: (Eq a, Num a, Enum a) => a -> [[a]]
+triangle 0 = []
+triangle n = triangle (n-1) ++ [line n]
 ```

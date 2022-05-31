@@ -1,39 +1,29 @@
 import Data.List
 import Data.Maybe
 
--- retorna o subvetor incluindo o elemento posição índice e lim elementos a esquerda e a direita
 neib :: [a] -> Int -> Int -> [a]
-neib xs index lim = ...
-
--- verifica se o valor existe no vetor
+neib xs index lim = drop lower . take upper $ xs
+    where lower = max 0 (index - lim)
+          upper = min (length xs) (index + lim + 1)
+          
 exists :: Eq a => a -> [a] -> Bool
-exists y xs = ...
+exists y xs = isJust $ elemIndex y xs
 
--- converte de digito para char
 dig2char :: (Eq a, Num a, Enum a) => a -> Char
-dig2char dig = ...
+dig2char dig = fromJust $ lookup dig $ zip [0..] "0123456789"
 
--- verifica se esse valor pode ser inserido nesse índice
 fit :: (String, Int) ->  Int -> Int -> Bool
-fit (xs, lim) index value = ...
+fit (xs, lim) index value = not . exists (dig2char value) $ neib xs index lim
 
--- pega as posições de todos os .
 getHoles :: String -> [Int]
-getHoles xs = ...
+getHoles xs = [i | (c, i) <- zip xs [0..], c == '.']
 
--- insere esse valor nesse index e retorna o novo vetor resultante
-set :: String -> Int -> Int -> String
-set xs index value = ...
+set :: String -> Int -> Char -> String
+set xs index v = take index xs ++ [v] ++ drop (index + 1) xs
 
--- tenta resolver o problema para essa posição
--- se é possível resolver, retorna Just resposta, senão Nothing
--- problema (xs, lim)
--- holes: lista de posições a serem preenchidas
--- hindex: posicao atual no vetor de holes
 solve :: (String, Int) -> [Int] -> Int -> Maybe String
 solve (xs, lim) holes hindex = ...
 
--- prepara a entrada para a função recursiva de resolução
 mainSolver :: String -> Int -> String
 mainSolver xs lim = ...
 

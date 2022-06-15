@@ -22,11 +22,19 @@ set :: String -> Int -> Char -> String
 set xs index v = take index xs ++ [v] ++ drop (index + 1) xs
 
 solve :: (String, Int) -> [Int] -> Int -> Maybe String
-solve (xs, lim) holes hindex = ...
+solve (xs, lim) holes hindex
+    | hindex == size = Just xs
+    | null fvalues = Nothing
+    | otherwise = if null answers then Nothing else head answers
+    where
+        size = length holes
+        index = holes !! hindex
+        fvalues = fitValues xs lim index
+        branches = [solve (set xs index (dig2char v), lim) holes (hindex + 1) | v <- fvalues]
+        answers = [Just ans | (Just ans) <- branches]
 
 mainSolver :: String -> Int -> String
-mainSolver xs lim = ...
-
+mainSolver xs lim = fromJust $ solve (xs, lim) (getHoles xs) 0
 main :: IO ()
 main = do
     xs <- getLine

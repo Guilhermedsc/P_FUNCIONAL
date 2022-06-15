@@ -35,6 +35,7 @@ solve (xs, lim) holes hindex
 
 mainSolver :: String -> Int -> String
 mainSolver xs lim = fromJust $ solve (xs, lim) (getHoles xs) 0
+
 main :: IO ()
 main = do
     xs <- getLine

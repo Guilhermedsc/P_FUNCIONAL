@@ -5,15 +5,14 @@
 - [03. Aquecimento](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#03-aquecimento)
 - [04. Operações básicas](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#04-opera%C3%A7%C3%B5es-b%C3%A1sicas)
 - [05. Recursão](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#05-recurs%C3%A3o)
-- [06. Data.List && Prelude]()
-- [07. Maybe]()
-- [07. Zip e Fold]()
+- [06. Data.List && Prelude](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#06-datalist--prelude)
+- [07. Zip e Fold](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#07-zip-e-fold)
+- [08. Maybe](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#08-maybe)
 - [10. Strings]()
 - [11. Math]()
 - [12. Infinite lists]()
 - [13. Ordenação]()
 - [14. Algoritmos CHATOS!]()
-- [15. Novas]()
 
 
 ## 03. Aquecimento
@@ -74,7 +73,7 @@ soma2 x y = x + y
 ```
 
 
-# 04. Operações básicas
+## 04. Operações básicas
 
 - @014 @ !!
 ```haskell
@@ -203,7 +202,7 @@ euler1 n = sum [x | x <- [1..n-1], (x `mod` 3 == 0 || x `mod` 5 == 0)]
 ```
 
 
-# 05. Recursão
+## 05. Recursão
 
 - @013 fibonacci
 ```haskell
@@ -351,7 +350,7 @@ triangle n = triangle (n-1) ++ [line n]
 ```
 
 
-# 06. Data.List && Prelude
+## 06. Data.List && Prelude
 
 - @501 Biblioteca Data.List
 ```haskell
@@ -374,7 +373,7 @@ triangle n = triangle (n-1) ++ [line n]
 ````
 
 
-# 07. Zip e Fold
+## 07. Zip e Fold
 
 - @064 produtoEscalar - utilizando a função zip
 ```haskell
@@ -405,7 +404,7 @@ triangle n = triangle (n-1) ++ [line n]
 ````
 
 
-# 08. Maybe
+## 08. Maybe
 - @069 @ elemIndex - Data.List
 ```haskell
 ````
@@ -419,7 +418,7 @@ triangle n = triangle (n-1) ++ [line n]
 ````
 
 
-#10. Strings
+## 10. Strings
 - @503 Métodos de string
 ```haskell
 ````
@@ -441,7 +440,7 @@ triangle n = triangle (n-1) ++ [line n]
 ````
 
 
-# 11. Math
+## 11. Math
 - @044 sdig - soma dos dígitos
 ```haskell
 ````
@@ -455,7 +454,7 @@ triangle n = triangle (n-1) ++ [line n]
 ````
 
 
-# 12. Infinite
+## 12. Infinite
 - @502 Listas Infinitas
 ```haskell
 ````
@@ -489,7 +488,7 @@ triangle n = triangle (n-1) ++ [line n]
 ````
 
 
-# 13. Ordenação
+## 13. Ordenação
 - @046 compac
 ```haskell
 ````
@@ -515,7 +514,7 @@ triangle n = triangle (n-1) ++ [line n]
 ````
 
 
-# 14. Novas
+## 14. Novas
 - @507 Carro em Haskell
 ```haskell
 ````

@@ -15,6 +15,7 @@
 - [14. Algoritmos CHATOS!]()
 - [15. Novas]()
 
+
 ## 03. Aquecimento
 
 - @004 countNeg
@@ -71,6 +72,7 @@ min3 x y z = min z (min x y)
 soma2 :: Num a => a -> a -> a
 soma2 x y = x + y
 ```
+
 
 # 04. Operações básicas
 
@@ -199,6 +201,7 @@ paridade xs = if (cont xs) `mod` 2 /= 0 then True else False
 euler1 :: Integral a => a -> a
 euler1 n = sum [x | x <- [1..n-1], (x `mod` 3 == 0 || x `mod` 5 == 0)]
 ```
+
 
 # 05. Recursão
 
@@ -346,3 +349,177 @@ triangle :: (Eq a, Num a, Enum a) => a -> [[a]]
 triangle 0 = []
 triangle n = triangle (n-1) ++ [line n]
 ```
+
+
+# 06. Data.List && Prelude
+
+- @501 Biblioteca Data.List
+```haskell
+````
+
+- @071 @ map
+```haskell
+````
+
+- @073 @ filter
+```haskell
+````
+
+- @022 @ tails - Data.List.tails
+```haskell
+````
+
+- @024 @ nub - Data.List.nub
+```haskell
+````
+
+
+# 07. Zip e Fold
+
+- @064 produtoEscalar - utilizando a função zip
+```haskell
+````
+
+- @065 indices - busca posições do elemento
+```haskell
+````
+
+- @067 @ concatMap - Data.List.concatMap
+```haskell
+````
+
+- @043 ehPrimo
+```haskell
+````
+
+- @077 vigenere
+```haskell
+````
+
+- @049 base - mudança de base
+```haskell
+````
+
+- @083 fraction reduce
+```haskell
+````
+
+
+# 08. Maybe
+- @069 @ elemIndex - Data.List
+```haskell
+````
+
+- @081 somaMaybe
+```haskell
+````
+
+- @082 filterMaybe
+```haskell
+````
+
+
+#10. Strings
+- @503 Métodos de string
+```haskell
+````
+
+- @039 upper
+```haskell
+````
+
+- @040 titulo
+```haskell
+````
+
+- @041 selec - apenas as chaves selecionadas
+```haskell
+````
+
+- @042 isPalind - verificar palíndromo
+```haskell
+````
+
+
+# 11. Math
+- @044 sdig - soma dos dígitos
+```haskell
+````
+
+- @052 rev - inverter inteiro
+```haskell
+````
+
+- @049 base - mudança de base
+```haskell
+````
+
+
+# 12. Infinite
+- @502 Listas Infinitas
+```haskell
+````
+
+- @072 @ repeat
+```haskell
+````
+
+- @074 @ replicate
+```haskell
+````
+
+- @076 geradores
+```haskell
+````
+
+- @075 expoentes - Contar quantas vezes um número divide o outro
+```haskell
+````
+
+- @058 factors - fatores de um número
+```haskell
+````
+
+- @080 decompor
+```haskell
+````
+
+- @049 base - mudança de base
+```haskell
+````
+
+
+# 13. Ordenação
+- @046 compac
+```haskell
+````
+
+- @003 vetFib
+```haskell
+````
+
+- @034 ordenada
+```haskell
+````
+
+- @033 inserir - inserir ordenado
+```haskell
+````
+
+- @035 qsort
+```haskell
+````
+
+- @036 merge - recursão
+```haskell
+````
+
+
+# 14. Novas
+- @507 Carro em Haskell
+```haskell
+````
+
+- @078 Armário - Either, Map
+```haskell
+````

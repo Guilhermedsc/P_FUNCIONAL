@@ -296,8 +296,6 @@ sequencia n m = m:(sequencia (n-1) (m+1))
 rotEsq :: (Eq t, Num t) => t -> [a] -> [a]
 rotEsq 0 ys = ys
 rotEsq n ys = (rotEsq (n-1) ((tail ys) ++ [head ys]))
-
-{- se quiser concatenar o resultado de head, precisa ++[head x -}
 ```
 
 - @038 rotDir
@@ -352,24 +350,31 @@ triangle n = triangle (n-1) ++ [line n]
 
 ## 06. Data.List && Prelude
 
-- @501 Biblioteca Data.List
-```haskell
-````
-
 - @071 @ map
 ```haskell
+mymap :: (a -> b) -> [a] -> [b]
+mymap = map
 ````
 
 - @073 @ filter
 ```haskell
+myfilter :: (a -> Bool) -> [a] -> [a]
+myfilter _ [] = []
+myfilter x [a] = [a | x a]
+myfilter x (y : ys) = if x y then y : myfilter x ys else myfilter x ys
 ````
 
 - @022 @ tails - Data.List.tails
 ```haskell
+mytails :: [a] -> [[a]]
+mytails [] = [[]]
+mytails a = a : mytails (tail a)
 ````
 
 - @024 @ nub - Data.List.nub
 ```haskell
+mynub :: [Int] -> [Int]
+mynub = foldl (\xs y -> if y `notElem` xs then xs ++ [y] else xs) []
 ````
 
 
@@ -377,18 +382,28 @@ triangle n = triangle (n-1) ++ [line n]
 
 - @064 produtoEscalar - utilizando a função zip
 ```haskell
+produtoEscalar :: Num a => [a] -> [a] -> a
+produtoEscalar a b = sum [x * y | (x, y) <- zip a b]
 ````
 
 - @065 indices - busca posições do elemento
 ```haskell
+indices :: (Num a1, Enum a1, Eq a2) => a2 -> [a2] -> [a1]
+indices a b = [snd x | x <- zip b [0 ..], fst x == a]
 ````
 
 - @067 @ concatMap - Data.List.concatMap
 ```haskell
+concatmap :: Foldable t => ([a1] -> a2 -> [a1]) -> t a2 -> [a1]
+concatmap fn xs = foldl fn [] xs
 ````
 
 - @043 ehPrimo
 ```haskell
+ehPrimo :: Integral a => a -> Bool
+ehPrimo a = foldl myfunc True [2 .. a - 1]
+  where
+    myfunc x y = x && a `mod` y /= 0
 ````
 
 - @077 vigenere
@@ -397,20 +412,47 @@ triangle n = triangle (n-1) ++ [line n]
 
 - @049 base - mudança de base
 ```haskell
+restos :: Integral a => a -> a -> [a]
+restos 0 b = []
+restos a b = (a `mod` b) : restos (a `div` b) b
+
+base :: Int -> Int -> [Char]
+base a b = foldl (\x y -> (text !! y) : x) [] $ restos a b
+  where
+    text = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 ````
 
 - @083 fraction reduce
 ```haskell
+reduce :: Integral b => (b, b) -> (b, b)
+reduce (a, b) = (a `div` mdcAB, b `div` mdcAB)
+  where
+    mdcAB = mdc a b
+
+mdc :: Integral t => t -> t -> t
+mdc a 0 = a
+mdc a b = mdc b (a `mod` b)
 ````
 
 
 ## 08. Maybe
 - @069 @ elemIndex - Data.List
 ```haskell
+myelemIndex :: (Num a1, Enum a1, Eq a2) => a2 -> [a2] -> Maybe a1
+myelemIndex a b = if not (null elem) then head elem else Nothing
+  where
+    elem = [Just c | (c, d) <- zip [0 ..] b, d == a]
 ````
 
 - @081 somaMaybe
 ```haskell
+import Data.Maybe
+
+somaMaybe :: Maybe Int -> Maybe Int -> Maybe Int
+somaMaybe Nothing Nothing = Nothing
+somaMaybe (Just x) Nothing = Just x
+somaMaybe Nothing (Just y) = Just y
+somaMaybe (Just x) (Just y) = Just (x + y)
 ````
 
 - @082 filterMaybe

@@ -228,15 +228,6 @@ maioresQue y ys = filter (> y) ys
 concatena :: [a] -> [a] -> [a]
 concatena [] ys = ys
 concatena (x:xs) ys = x: concatena xs ys
-
-{- 
-[1,2,3] [4,5]
-1:[2,3] [4,5]
-1:2:[3] [4,5]
-1:2:3[] [4,5]
-
-[1,2,3,4,5] 
--}
 ```
 
 - @026 alter

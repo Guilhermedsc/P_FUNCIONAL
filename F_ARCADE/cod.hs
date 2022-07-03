@@ -1,15 +1,12 @@
---recebe duas listas ordenadas e retorna uma lista ordenada com os elementos de ambas
-merge :: Ord a => [a] -> [a] -> [a]
-merge [] [] = []
-merge [] ys = ys
-merge xs [] = xs
-merge (x:xs) (y:ys)
-    | x < y = x : merge xs (y:ys)
-    | otherwise = y : merge (x:xs) ys
+--gerar o n primeiros termos da sequencia de fibonacci
+vetFib :: Int -> [Int]
+vetFib 0 = []
+vetFib 1 = [0]
+vetFib 2 = [0,1]
+vetFib n = (vetFib (n-1)) ++ [last (vetFib (n-1)) + last (vetFib (n-2))]
     
 main :: IO ()
 main = do
-    print $ merge [1,3] [7,7,9] == [1,3,7,7,9]
-    print $ merge [7,7,9] [1,3] == [1,3,7,7,9]
-    print $ merge [1,3,5] [4,4,6,7] == [1,3,4,4,5,6,7]
-    print $ merge [4,4,5,6,7] [1,3] == [1,3,4,4,5,6,7]
+    print $ vetFib 2 == [0,1]
+    print $ vetFib 6 == [0,1,1,2,3,5]
+    print $ vetFib 9 == [0,1,1,2,3,5,8,13,21]

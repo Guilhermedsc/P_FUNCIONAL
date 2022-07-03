@@ -539,16 +539,11 @@ myreplicate n x = if n > 0 then x : myreplicate (n-1) x else []
 
 - @003 vetFib
 ```haskell
-soma_n1_n2 :: [Integer] -> Integer
-soma_n1_n2 = sum . reverse . take 2 . reverse
-
-vetFib :: (Eq a, Num a) => a -> [Integer]
+vetFib :: Int -> [Int]
 vetFib 0 = []
 vetFib 1 = [0]
 vetFib 2 = [0,1]
-vetFib n = 
-    let p = vetFib (n - 1)
-    in p ++ [soma_n1_n2 p]
+vetFib n = (vetFib (n-1)) ++ [last (vetFib (n-1)) + last (vetFib (n-2))]
 ````
 
 - @034 ordenada

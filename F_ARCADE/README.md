@@ -461,34 +461,54 @@ somaMaybe (Just x) (Just y) = Just (x + y)
 
 
 ## 10. Strings
-- @503 Métodos de string
-```haskell
-````
-
 - @039 upper
 ```haskell
+import Data.Char
+
+upper :: [Char] -> [Char]
+upper cs = [toUpper c | c<-cs]
 ````
 
 - @040 titulo
 ```haskell
+import Data.Char
+
+process :: [Char] -> [Char]
+process (x:[]) = []
+process (x:xs) = (if x == ' ' then toUpper(y) else toLower(y)) : process (xs)
+       where y = head xs
+
+titulo :: [Char] -> [Char]
+titulo xs = process (' ':xs)
 ````
 
 - @041 selec - apenas as chaves selecionadas
 ```haskell
+selec :: [a] -> [Int] -> [a]
+selec u p = [(u !! y) | y<-p]
 ````
 
 - @042 isPalind - verificar palíndromo
 ```haskell
+isPalind :: Eq a => [a] -> Bool
+isPalind xs = xs == reverse xs
 ````
 
 
 ## 11. Math
 - @044 sdig - soma dos dígitos
 ```haskell
+sdig :: Integral p => p -> p
+sdig 0 = 0
+sdig x = (x `mod` 10) + (sdig (x `div` 10))
 ````
 
 - @052 rev - inverter inteiro
 ```haskell
+rev :: Show a => a -> Int
+rev n = read string :: Int
+    where
+        string = reverse $ show n
 ````
 
 - @049 base - mudança de base
@@ -497,16 +517,14 @@ somaMaybe (Just x) (Just y) = Just (x + y)
 
 
 ## 12. Infinite
-- @502 Listas Infinitas
-```haskell
-````
-
 - @072 @ repeat
 ```haskell
+myrepeat x = x:myrepeat x
 ````
 
 - @074 @ replicate
 ```haskell
+myreplicate n x = if n > 0 then x : myreplicate (n-1) x else []
 ````
 
 - @076 geradores
@@ -537,6 +555,16 @@ somaMaybe (Just x) (Just y) = Just (x + y)
 
 - @003 vetFib
 ```haskell
+soma_n1_n2 :: [Integer] -> Integer
+soma_n1_n2 = sum . reverse . take 2 . reverse
+
+vetFib :: (Eq a, Num a) => a -> [Integer]
+vetFib 0 = []
+vetFib 1 = [0]
+vetFib 2 = [0,1]
+vetFib n = 
+    let p = vetFib (n - 1)
+    in p ++ [soma_n1_n2 p]
 ````
 
 - @034 ordenada

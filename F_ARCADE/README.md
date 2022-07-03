@@ -116,6 +116,8 @@ divide xs x = splitAt x xs
 
 - @047 @ partition
 ```haskell
+splitints :: Integral a => [a] -> ([a], [a])
+splitints u = ([x | x<-u, odd x], [x | x<-u, even x])
 ```
 
 - @007 somaImpares

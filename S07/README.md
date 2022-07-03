@@ -6,9 +6,9 @@
 
 [08. Maybe](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#08-maybe) (✔)
 
-[10. Strings](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#10-strings)
+[10. Strings](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#10-strings) (✔)
 
-[11. Math](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#11-math)
+[11. Math](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#11-math) (✔)
 
 [12. Infinite lists](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#12-infinite)
 

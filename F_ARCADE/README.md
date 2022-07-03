@@ -585,8 +585,6 @@ vetFib n =
 
 
 ## 14. Novas
-- @507 Carro em Haskell
-```haskell
-````
+- [@507 Carro em Haskell](carro.hs)
 
 - [@078 Armário - Either, Map](armario.hs)

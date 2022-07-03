@@ -553,18 +553,33 @@ vetFib n =
 
 - @034 ordenada
 ```haskell
+ordenada :: Ord a => [a] -> Bool
+ordenada xs = if (length xs) == 1 then True else if (head xs) > (head (tail xs)) then False else ordenada (tail xs)
 ````
 
 - @033 inserir - inserir ordenado
 ```haskell
+inserir :: Ord t => t -> [t] -> [t]
+inserir x [] = [x]
+inserir x (h:t) = if x < h then x:h:t else h:inserir x t
 ````
 
 - @035 qsort
 ```haskell
+qsort :: Ord a => [a] -> [a]
+qsort [] = []
+qsort (x:xs) = qsort [y | y <- xs, y <= x] ++ [x] ++ qsort [y | y <- xs, y > x]
 ````
 
 - @036 merge - recursão
 ```haskell
+merge :: Ord a => [a] -> [a] -> [a]
+merge [] [] = []
+merge [] ys = ys
+merge xs [] = xs
+merge (x:xs) (y:ys)
+    | x < y = x : merge xs (y:ys)
+    | otherwise = y : merge (x:xs) ys
 ````
 
 

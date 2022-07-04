@@ -527,6 +527,8 @@ myreplicate n x = if n > 0 then x : myreplicate (n-1) x else []
 
 - @080 decompor
 ```haskell
+separa :: Integral a => a -> [a]
+separa x = if x < 10 then [x] else separa (x `div` 10) ++ [x `mod` 10]
 ````
 
 - @049 base - mudança de base

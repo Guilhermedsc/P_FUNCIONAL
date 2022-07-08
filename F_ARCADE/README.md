@@ -499,6 +499,12 @@ rev n = read string :: Int
 
 - @049 base - mudança de base
 ```haskell
+base n b
+    | div n b > 0 = base (div n b) b ++ [text !! (mod n b)]
+    | n < b && n /= 0 = [text !! n]
+    | otherwise = ""
+        where
+            text = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 ````
 
 
@@ -515,14 +521,97 @@ myreplicate n x = if n > 0 then x : myreplicate (n-1) x else []
 
 - @076 geradores
 ```haskell
+import Data.List
+
+-- g1
+a1 :: [Integer]
+a1 = gerador 0
+    where gerador n 
+            | n > 0 = [n] ++ gerador (n * (-1))
+            | otherwise = [n] ++ gerador (n * (-1) + 1)
+
+c1 :: [Integer]
+c1 = concat $ unfoldr fn 0
+    where fn n = if n == 0
+                    then Just ([0], n + 1)
+                    else Just ([n] ++ [n * (-1)], n +1)
+
+-- g 2
+a2 :: [Integer]
+a2 = gerador 1
+    where 
+        gerador n
+            | odd n = [n] ++ gerador (n + 1)
+            | otherwise = [n * (-1)] ++ gerador (n + 1)
+
+c2 :: [Integer]
+c2 = unfoldr fn 1
+    where fn n = if odd n
+                    then Just (n, n + 1)
+                    else Just (n * (-1), n + 1)
+
+-- g3
+a3 :: [Integer]
+a3 = gerador 0
+    where gerador n = [2^n] ++ gerador (n + 1)
+
+c3 :: [Integer]
+c3 = unfoldr fn 1
+    where fn n = if n < 0
+            then Nothing 
+            else Just (n, n*2)
+
+d3 :: [Integer]
+d3 = iterate (*2) 1
+
+-- g 4
+a4 :: Integral a => a -> [a]
+a4 n
+    | n == 1 = [1]
+    | otherwise = [n] ++ a4 (div n 2)
+
+c4 :: Integral b => b -> [b]
+c4 n = unfoldr fn n
+    where fn n = if n == 0 
+            then Nothing 
+            else Just (n, div n 2)
 ````
 
 - @075 expoentes - Contar quantas vezes um número divide o outro
 ```haskell
+exponents base divider = length $ filtro $ takeWhile (\(a,b) -> a /= 0) $ iterate fn (base, mod base divider)
+    where 
+        fn (a,b) = (div a divider, (div a divider) `mod` divider)
+        filtro [] = []
+        filtro ((a,b):xs)
+            | b == 1 = filtro xs
+            | otherwise = (a,b) : filtro xs 
 ````
 
 - @058 factors - fatores de um número
 ```haskell
+exponents base divider = length $ filtro $ takeWhile (\(a,b) -> a /= 0 && b == 0) $ iterate fn (base, mod base divider)
+    where 
+        fn (a,b) = (div a divider , (div a divider ) `mod` divider  )
+        filtro [] = []
+        filtro ((a,b):xs)
+            | b == 1 = filtro xs
+            | otherwise = (a,b) : filtro xs 
+
+ehPrimo n
+    | n < 1 = False 
+    | n == 1 = True
+    | otherwise = foldl (\acc x ->  acc && mod n x /= 0 )True [2.. n - 1]
+
+factors n = fatores n xs
+    where 
+        fatores a [] = [(a, 1)]
+        fatores a (y:ys)
+            | a <= 1 = []
+            | auxiliar a y > 0 =  (y,auxiliar a y) : fatores (div a (y ^ auxiliar a y)) ys
+            | otherwise = fatores a ys
+        auxiliar atual fator = exponents atual fator
+        xs = [x | x <- [2..n], ehPrimo x]
 ````
 
 - @080 decompor
@@ -533,6 +622,12 @@ separa x = if x < 10 then [x] else separa (x `div` 10) ++ [x `mod` 10]
 
 - @049 base - mudança de base
 ```haskell
+base n b
+    | div n b > 0 = base (div n b) b ++ [text !! (mod n b)]
+    | n < b && n /= 0 = [text !! n]
+    | otherwise = ""
+        where
+            text = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 ````
 
 

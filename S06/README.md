@@ -1,4 +1,4 @@
-# S06
+# S06 - distance
 
 - Seja uma string formada por dígitos e underlines `.`.
 - Seja um valor de limite L.

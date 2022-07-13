@@ -10,7 +10,7 @@
 
 [11. Math](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#11-math) (✔)
 
-[12. Infinite lists](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#12-infinite)
+[12. Infinite lists](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#12-infinite) (✔)
 
 [13. Ordenação](https://github.com/Guilhermedsc/P_FUNCIONAL/tree/main/F_ARCADE#13-ordena%C3%A7%C3%A3o) (✔)
 
